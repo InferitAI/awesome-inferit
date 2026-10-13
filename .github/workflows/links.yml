@@ -1,0 +1,30 @@
+name: links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check every link in the README
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # x.com and npmjs.com answer 403 to automated clients, so they are checked by hand.
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept 200,206,429
+            --exclude '^https://x\.com/'
+            --exclude '^https://www\.npmjs\.com/'
+            README.md
+          fail: true
