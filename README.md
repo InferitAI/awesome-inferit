@@ -119,6 +119,10 @@ The API stores token counts and costs, never prompts or completions. The seller 
 - [X: @inferit_](https://x.com/inferit_)
 - [About](https://inferit.cc/about): the team and how to reach us.
 
+## Roadmap
+
+- [Inferit roadmap](https://github.com/InferitAI/roadmap) - What is live, what is next and what is planned, one issue per item.
+
 ## Contributing
 
 Add one line per resource, in the section it belongs to, with a link that resolves and a description that says what it does. Only public resources that work with Inferit today. Open a pull request; the link check runs on it. By contributing, you dedicate your contribution to the public domain under CC0 1.0.
